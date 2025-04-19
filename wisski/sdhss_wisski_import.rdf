@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding='UTF-8'?>
+<!-- 
+Address of the present file
+
+https://raw.githubusercontent.com/Semantic-Data-for-Humanities/SDHSS/refs/heads/main/wisski/sdhss_wisski_import.rdf
+
+-->
 <rdf:RDF xmlns="http://wiss-ki.eu/ontology/current/"
      xml:base="http://wiss-ki.eu/ontology/current/"
      xmlns:ecrm="http://erlangen-crm.org/current/"
