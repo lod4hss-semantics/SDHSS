@@ -26,12 +26,6 @@
   {
     "kind": 2,
     "language": "sparql",
-    "value": " {\n            ?s  a crm:E21_Person;",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "sparql",
     "value": "PREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>\n\nCONSTRUCT {?id1 rdf:type crm:E21_Person;\n                crm:P1_is_identified_by ?id2;\n                owl:sameAs ?s.    \n           ?id2 rdf:type crm:E41_Appellation;\n                crm:P190_has_symbolic_content ?label.\n                }\nwhere {\n    {SELECT ?s ?label \n    (URI(CONCAT('https://science-in-context.wisski.cloud/', STRUUID())) as ?id1) \n    (URI(CONCAT('https://science-in-context.wisski.cloud/', STRUUID())) as ?id2) \n     WHERE {\n        GRAPH <https://github.com/Sciences-historiques-numeriques/astronomers/blob/main/graphs/wikidata-imported-data.md>{\n            ?s  a  wd:Q5;\n                rdfs:label ?label.\n            }\n    }\n    LIMIT 10\n    }\n}\n\n",
     "metadata": {}
   },
@@ -39,6 +33,30 @@
     "kind": 2,
     "language": "sparql",
     "value": "PREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n\n\nINSERT {GRAPH <https://science-in-context.wisski.cloud/>\n    \t{?id1 rdf:type crm:E21_Person;\n                crm:P1_is_identified_by ?id2;\n                owl:sameAs ?s.\n           ?id2 rdf:type crm:E41_Appellation;\n                crm:P190_has_symbolic_content ?label.\n                }\n}\nwhere {\n    {SELECT ?s ?label \n    (URI(CONCAT('https://science-in-context.wisski.cloud/', STRUUID())) as ?id1)\n    (URI(CONCAT('https://science-in-context.wisski.cloud/', STRUUID())) as ?id2) \n     WHERE {\n        GRAPH <https://github.com/Sciences-historiques-numeriques/astronomers/blob/main/graphs/wikidata-imported-data.md>{\n            ?s  a  wd:Q5;\n                rdfs:label ?label.\n            }\n    }\n    LIMIT 10\n    }\n}\n",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n\nSELECT ?pUri ?birthDate\n    (URI(CONCAT('https://science-in-context.wisski.cloud/', STRUUID())) as ?id1) \n    (URI(CONCAT('https://science-in-context.wisski.cloud/', STRUUID())) as ?id2) \n     WHERE {\n        GRAPH <https://github.com/Sciences-historiques-numeriques/astronomers/blob/main/graphs/wikidata-imported-data.md>{\n            ?s  a  wd:Q5;\n                wdt:P569 ?birthDate.\n            }\n        GRAPH <https://science-in-context.wisski.cloud/>{\n            ?pUri owl:sameAs ?s.    \n            }    \n    }\n    LIMIT 10",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n\nCONSTRUCT {?id1 crm:P98_brought_into_life ?pUri;\n                rdf:type crm:E67_Birth;\n                crm:P4_has_time-span ?id2.\n            ?id2 a crm:E52_Time-Span;\n                    crm:P82_at_some_time_within ?birthDate.\n                }\nwhere {\n    {\n    SELECT DISTINCT?pUri ?birthDate\n    (URI(CONCAT('https://science-in-context.wisski.cloud/', STRUUID())) as ?id1) \n    (URI(CONCAT('https://science-in-context.wisski.cloud/', STRUUID())) as ?id2) \n     WHERE {\n        GRAPH <https://github.com/Sciences-historiques-numeriques/astronomers/blob/main/graphs/wikidata-imported-data.md>{\n            ?s  a  wd:Q5;\n                wdt:P569 ?birthDate.\n            }\n        GRAPH <https://science-in-context.wisski.cloud/>{\n            ?pUri owl:sameAs ?s.    \n            }    \n    }\n    order by ?s\n    LIMIT 10\n    }\n}\n\n",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n\nINSERT {GRAPH <https://science-in-context.wisski.cloud/>\n            {?id1 crm:P98_brought_into_life ?pUri;\n                    rdf:type crm:E67_Birth;\n                    crm:P4_has_time-span ?id2.\n                ?id2 a crm:E52_Time-Span;\n                        crm:P82_at_some_time_within ?birthDate.\n                    }\n        }\nwhere {\n    {\n    SELECT DISTINCT?pUri ?birthDate\n    (URI(CONCAT('https://science-in-context.wisski.cloud/', STRUUID())) as ?id1) \n    (URI(CONCAT('https://science-in-context.wisski.cloud/', STRUUID())) as ?id2) \n     WHERE {\n        GRAPH <https://github.com/Sciences-historiques-numeriques/astronomers/blob/main/graphs/wikidata-imported-data.md>{\n            ?s  a  wd:Q5;\n                wdt:P569 ?birthDate.\n            }\n        GRAPH <https://science-in-context.wisski.cloud/>{\n            ?pUri owl:sameAs ?s.    \n            }    \n    }\n    order by ?s\n    LIMIT 10\n    }\n}\n\n",
     "metadata": {}
   }
 ]
