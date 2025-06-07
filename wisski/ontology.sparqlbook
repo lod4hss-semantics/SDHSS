@@ -1,0 +1,14 @@
+[
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Gestion provisoire de l'ontologie",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "J'importe l'ontologie \"[Higher Education and Academies](view-source:https://ontome.net/api/namespaces-rdf-owl.rdf?namespace=138)\" mais dans l'API manquent les relations de subsumption dans CIDOC CRM\n",
+    "metadata": {}
+  }
+]
