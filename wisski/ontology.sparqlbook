@@ -8,7 +8,55 @@
   {
     "kind": 1,
     "language": "markdown",
-    "value": "J'importe l'ontologie \"[Higher Education and Academies](view-source:https://ontome.net/api/namespaces-rdf-owl.rdf?namespace=138)\" mais dans l'API manquent les relations de subsumption dans CIDOC CRM\n",
+    "value": "J'importe l'ontologie \"[Higher Education and Academies](view-source:https://ontome.net/api/namespaces-rdf-owl.rdf?namespace=138)\" mais dans l'API manquent les relations de subsumption dans CIDOC CRM\n\n\n\n\nhttps://ontome.net/api/namespaces-rdf-owl.rdf?namespace=1\nhttps://ontome.net/api/namespaces-rdf-owl.rdf?namespace=3\nhttps://ontome.net/api/namespaces-rdf-owl.rdf?namespace=112\n\n\n",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nselect * where { GRAPH ?g\n{\n    crm:P3_has_note ?p ?o.\n}\n    \n} limit 100",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nDELETE\nWHERE {\n    GRAPH <https://ontome.net/api/namespaces-rdf-owl.rdf?namespace=1> {\n            crm:P3_has_note rdfs:range crm:E62\n\n    }\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n    PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>\n    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n    PREFIX owl: <http://www.w3.org/2002/07/owl#>\n    DELETE DATA\n    {\n        GRAPH <https://ontome.net/api/namespaces-rdf-owl.rdf?namespace=1> {\n                crm:P3_has_note rdf:type owl:ObjectProperty\n\n        }\n    }",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nINSERT DATA\n {\n    GRAPH <https://ontome.net/api/namespaces-rdf-owl.rdf?namespace=1> {\n            crm:P3_has_note rdf:type owl:DatatypeProperty\n\n    }\n}       ",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nselect ?p ?o\n {\n    GRAPH <https://ontome.net/api/namespaces-rdf-owl.rdf?namespace=1> {\n            crm:P82_at_some_time_within ?p ?o\n\n    }\n}\n\n\n",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nDELETE DATA\n {\n    GRAPH <https://ontome.net/api/namespaces-rdf-owl.rdf?namespace=1> {\n            crm:P82_at_some_time_within rdfs:range crm:E61;\n        \t\t\t\t\t\trdf:type owl:ObjectProperty.\n    }\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nINSERT DATA\n {\n    GRAPH <https://ontome.net/api/namespaces-rdf-owl.rdf?namespace=1> {\n            crm:P82_at_some_time_within rdf:type owl:DatatypeProperty.\n    }\n}\n",
     "metadata": {}
   }
 ]
